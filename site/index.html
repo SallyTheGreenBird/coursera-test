@@ -1,9 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Hello Coursera!!!</title>
-</head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> hello </title>
+		<style>
+		body {
+		  background-image: url('https://i.postimg.cc/HW26XZ54/We-Chat-Image-20210806030624.jpg');
+		  background-repeat: no-repeat;
+		  background-attachment: fixed; 
+		  background-size: 100% 100%;
+		}
+		</style>
+	</head>
 <body>
-<h1>Hello Course  ra!!!fwerg3r</h1>
-</body>
+
+
+	<p style = "position:absolute; left:100px; top:100px; font-size:50px;color:#016EFF;"><span id="datetime"></span></p>
+
+<script>
+var dt = new Date();
+
+document.getElementById("datetime").innerHTML = ((dt.getFullYear()) + "-" + (("0"+(dt.getMonth()+1)).slice(-2))+ "-" + ("0"+dt.getDate()).slice(-2))+" "+(("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2))+":"+ (("0"+dt.getSeconds()).slice(-2));
+</script>
+
 </html>
