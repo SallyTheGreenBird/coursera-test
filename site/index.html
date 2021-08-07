@@ -3,25 +3,40 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title> hello </title>
+	<script type="text/javascript"> 
+		function display_c(){
+		var refresh=1000; // Refresh rate in milli seconds
+		mytime=setTimeout('display_ct()',refresh)
+		}
+
+		function display_ct() {
+		var x = new Date()
+		var x1=x.getMonth() + 1+ "/" + x.getDate() + "/" + x.getFullYear(); 
+		x1 = x1 + " - " +  x.getHours( )+ ":" +  x.getMinutes() + ":" +  x.getSeconds();
+		document.getElementById('ct').innerHTML = x1;
+		display_c();
+		 }
+	</script>
+
+
 		<style>
 		body {
-		  background-image: url('https://sallythegreenbird.github.io/My-Files/code.jpg');
+		  background-image: url('code.jpg');
 		  background-repeat: no-repeat;
-		  
-		max-height: 100%;
-    		max-width: 100%;
+		  background-attachment: fixed; 
+		  max-height: 100%;
+    max-width: 100%;
 		}
 		</style>
 	</head>
-<body>
+
+<body onload=display_ct(); >
 
 
-	<p style = "position:absolute; left:100px; top:80px; font-size:100px;color:#016EFF;"><span id="datetime"></span></p>
 
-<script>
-var dt = new Date();
+<span id='ct' style="position: absolute;top: 100px; left: 100px; width: 1000px; height: 100px;"></span>
 
-document.getElementById("datetime").innerHTML = ((dt.getFullYear()) + "-" + (("0"+(dt.getMonth()+1)).slice(-2))+ "-" + ("0"+dt.getDate()).slice(-2))+" "+(("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2))+":"+ (("0"+dt.getSeconds()).slice(-2));
-</script>
+</body>
+
 
 </html>
